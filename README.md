@@ -5,7 +5,7 @@
 The website serves as a pre-employment screening tool to view a candidate's qualifications, and skills in a results-driven format.
 
 ## Developer
-- [Abdul Amir](https://github.com/AbdulAmir1) | [LinkedIn](https://www.linkedin.com/in/abdulameer-saleh/)
+- [Abdul Amir](https://github.com/AbdulAmir1) | [Linkedin](https://www.linkedin.com/in/abdulameer-saleh/)
 
 Development progress and tasks were managed using the following [Trello Board](https://trello.com/b/GkyG3AF6/booking).
 
