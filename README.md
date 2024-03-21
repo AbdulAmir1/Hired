@@ -7,7 +7,7 @@ The website serves as a pre-employment screening tool to view a candidate's qual
 ## Developer
 - [Abdul Amir](https://github.com/AbdulAmir1) | [Linkedin](https://www.linkedin.com/in/abdulameer-saleh/)
 
-Development progress and tasks were managed using the following [Trello Board](https://trello.com/b/GkyG3AF6/booking).
+Development progress and tasks were managed using the following [Trello Board](https://trello.com/b/nmmcmpPR/hired).
 
 ### User Features
 
