@@ -1,27 +1,7 @@
-# Pre-Hire Test
+# Vue 3 + Vite
 
-## About the Website
+This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-The website serves as a pre-employment screening tool to view a candidate's qualifications, and skills in a results-driven format.
+## Recommended IDE Setup
 
-## Developer
-- [Abdul Amir](https://github.com/AbdulAmir1) | [Linkedin](https://www.linkedin.com/in/abdulameer-saleh/)
-
-Development progress and tasks were managed using the following [Trello Board](https://trello.com/b/nmmcmpPR/hired).
-
-### User Features
-
-- **Test Taking**: Users can select a test  by selecting available tests, see the test results, and detailed score report, and can repeat the test they already failed.
-- **View Available Tests**: Users can view detailed information about tests available, including descriptions, difficulty levels, and scoring system followed by the creator by navigating to the available tests and clicking on view details.
-
-
-### Test Creator Features
-
-- **Tests Types**: The user can add, delete, and update different tests along with detailed descriptions, including type speed tests, language tests, and other types of tests  to the system.
-
-
-## Technologies Used
-
-- [Python](https://www.python.org/)
-- [Vue.js](https://vuejs.org/)
-- [PostgreSQL](https://www.postgresql.org/)
+- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
