@@ -20,6 +20,6 @@ export default {
 <template>
   <h2>New Regular Test</h2>
   <!-- <div @click="moveTo('/regular_test/new')">New</div> -->
-  <NewRegularTestMenu />
+  <NewRegularTestMenu :usr_id="this.$route.params.user_id" />
 </template>
 <style scoped></style>

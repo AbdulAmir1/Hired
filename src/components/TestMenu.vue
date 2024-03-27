@@ -1,8 +1,8 @@
 <script>
-import TestCollection from './TestCollection.vue'
+// import TestCollection from './TestCollection.vue'f
 export default {
   name: 'TestMenu',
-  components: { TestCollection },
+  components: {},
   props: ['msg', 'obj1', 'header'],
 
   // Or props: [ "name", ...etc.] ,
@@ -15,13 +15,19 @@ export default {
       this.$router.push(url)
     }
   },
-  mounted: function () {}
+  mounted: function () {
+    console.log('current user id :', this.$route.params.user_id)
+  }
 }
 </script>
 <template>
   <h2>Test Menu</h2>
-  <TestCollection />
-  <div @click="moveTo('/regular_test')">Regular</div>
-  <div @click="moveTo('/type_speed_test')">Type Speed</div>
+  <!-- <TestCollection /> -->
+  <div @click="moveTo('/regular_test/' + this.$route.params.user_id)">
+    Regular
+  </div>
+  <div @click="moveTo('/type_speed_test/') + this.$route.params.user_id">
+    Type Speed
+  </div>
 </template>
 <style scoped></style>

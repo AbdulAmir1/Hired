@@ -18,6 +18,8 @@ export default {
 </script>
 <template>
   <h2>Regular Test</h2>
-  <div @click="moveTo('/regular_test/new')">New</div>
+  <div @click="moveTo(`/regular_test/${this.$route.params.user_id}/new`)">
+    New
+  </div>
 </template>
 <style scoped></style>

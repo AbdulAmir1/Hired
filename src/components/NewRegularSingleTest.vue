@@ -29,11 +29,13 @@ export default {
       this.currentText = e.target.value
     }
   },
-  mounted: function () {}
+  mounted: function () {
+    console.log('new single choice usr id: ', this.$route.params.user_id)
+  }
 }
 </script>
 <template>
-  <h2>New Single Select Test</h2>
+  <h2>New Single Select Tes 1</h2>
   <!-- <div @click="moveTo('/regular_test/new')">New</div> -->
   <div>
     <form @submit="handleSubmit">

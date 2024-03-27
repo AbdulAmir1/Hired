@@ -30,7 +30,9 @@ export default {
       this.$router.push(url)
     }
   },
-  mounted: function () {}
+  mounted: function () {
+    console.log('new multi choice test usr id: ', this.$route.params.user_id)
+  }
 }
 </script>
 <template>
