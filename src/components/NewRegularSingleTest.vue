@@ -7,7 +7,7 @@ export default {
   data: () => ({
     options_count: 0,
     cur_option: 1,
-    new_test: { title: '', type: 2, options: [], answers: [] }
+    new_test: { title: '', type: 1, options: [], answers: [] }
   }),
 
   methods: {
@@ -18,7 +18,6 @@ export default {
       this.options_count++
       this.new_test.options.push(this.cur_option)
     },
-    hideWallets() {},
     moveTo(url) {
       this.$router.push(url)
     },

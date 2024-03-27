@@ -7,7 +7,7 @@ export default {
   data: () => ({
     options_count: 0,
     cur_option: 1,
-    new_test: { title: '', type: 2, options: [], answers: [] }
+    new_test: { title: '', type: 3, options: [], answers: [] }
   }),
 
   methods: {
