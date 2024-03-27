@@ -1,7 +1,8 @@
 <script>
+import TestCollection from './TestCollection.vue'
 export default {
   name: 'TestMenu',
-  components: {},
+  components: { TestCollection },
   props: ['msg', 'obj1', 'header'],
 
   // Or props: [ "name", ...etc.] ,
@@ -19,6 +20,7 @@ export default {
 </script>
 <template>
   <h2>Test Menu</h2>
+  <TestCollection />
   <div @click="moveTo('/regular_test')">Regular</div>
   <div @click="moveTo('/type_speed_test')">Type Speed</div>
 </template>

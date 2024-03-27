@@ -13,12 +13,14 @@ import NewRegularSingleTest from './components/NewRegularSingleTest.vue'
 import NewRegularMultiTest from './components/NewRegularMultiTest.vue'
 import NewRegularTrueFalseTest from './components/NewRegularTrueFalseTest.vue'
 import TestNavigater from './components/TestNavigater.vue'
+import TestCollection from './components/TestCollection.vue'
 const routes = [
   { path: '/', component: Home, name: 'Home' },
   { path: '/about', component: About, name: 'About' },
   { path: '/tests/types', component: TestTypeList, name: 'Test Types' },
   { path: '/quesions/:question_id', component: Test, name: 'Test' },
   { path: '/test_menu', component: TestMenu, name: 'TestMenu' },
+  { path: '/tests', component: TestCollection, name: 'TestCollection' },
   { path: '/regular_test', component: RegularTest, name: 'RegularTest' },
   { path: '/type_speed_test', component: TypeSpeedTest, name: 'TypeSpeedTest' },
   {

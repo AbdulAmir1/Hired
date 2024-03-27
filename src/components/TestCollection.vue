@@ -1,14 +1,12 @@
 <script>
 export default {
-  name: 'Home',
+  name: 'TestCollection',
   components: {},
   props: ['msg', 'obj1', 'header'],
   // Or props: ["msg", "name", ...etc.] ,
   data: () => ({ heading: '' }),
 
   methods: {
-    showWallets() {},
-    hideWallets() {},
     moveTo(url) {
       this.$router.push(url)
     }
@@ -17,9 +15,6 @@ export default {
 }
 </script>
 <template>
-  <h2>Home</h2>
-
-  <div @click="moveTo('/tests')">Test Collections</div>
-  <div @click="moveTo('/test_menu')">Tests</div>
+  <h2>Test collection</h2>
 </template>
 <style scoped></style>
