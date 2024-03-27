@@ -2,15 +2,19 @@
 export default {
   name: 'TypeSpeedTest',
   components: {},
-  props: ['msg', 'obj1', 'header'],
+  props: ['user_id'],
   // Or props: ["msg", "name", ...etc.] ,
   data: () => ({ heading: '' }),
 
-  methods: {
-    showWallets() {},
-    hideWallets() {}
-  },
-  mounted: function () {}
+  methods: {},
+  mounted: function () {
+    console.log(
+      'In TypeSpeedTestMenu : current user id :',
+      this.$route.params.user_id,
+      ' test_group: ',
+      this.$route.params._group_id
+    )
+  }
 }
 </script>
 <template>

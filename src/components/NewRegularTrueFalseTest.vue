@@ -1,8 +1,11 @@
 <script>
+import axios from 'axios'
+import { getTestsForUser } from '../services/api'
+import BASEURL from '../../config'
 export default {
   name: 'NewRegularTrueFalseTest',
   components: {},
-  props: ['msg', 'obj1', 'header'],
+  props: ['user_id'],
   // Or props: ["msg", "name", ...etc.] ,
   data: () => ({
     options_count: 0,
@@ -22,9 +25,12 @@ export default {
     moveTo(url) {
       this.$router.push(url)
     },
-    handleSubmit(e) {
+    async handleSubmit(e) {
       e.preventDefault()
       console.log('submiting ', this.new_test)
+      await axios.post(`${BASEURL}/tests`, this.new_test).then((response) => {
+        this.moveTo(`/test_menu/${this.user_id}/${this.newCol_id}`)
+      })
     },
     handleChange(e, i) {
       // console.log('e is ', e)
@@ -35,7 +41,12 @@ export default {
     }
   },
   mounted: function () {
-    console.log('new t/f test usr id: ', this.$route.params.user_id)
+    console.log(
+      'new t/f test usr id: ',
+      this.$route.params.user_id,
+      ' group_id :',
+      this.$route.params.group_id
+    )
     // this.id = this.user_id
   }
 }

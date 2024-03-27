@@ -3,13 +3,11 @@ import { addNewTestType } from '../services/api'
 export default {
   name: 'TestTypeList',
   components: {},
-  props: ['msg', 'obj1', 'header'],
+  props: ['user_id'],
   // Or props: ["msg", "name", ...etc.] ,
   data: () => ({ heading: '' }),
 
   methods: {
-    showWallets() {},
-    hideWallets() {},
     async addNew() {
       await addNewTestType({ name: 'Single-Selection' })
     }

@@ -3,14 +3,11 @@ export default {
   name: 'NewTest',
   components: {},
 
-  props: ['msg', 'obj1', 'header'],
+  props: ['user_id'],
   // Or props: ["msg", "name", ...etc.] ,
   data: () => ({ heading: '' }),
 
-  methods: {
-    showWallets() {},
-    hideWallets() {}
-  },
+  methods: {},
   mounted: function () {}
 }
 </script>

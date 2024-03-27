@@ -23,40 +23,44 @@ const routes = [
   { path: '/about', component: About, name: 'About' },
   { path: '/tests/types', component: TestTypeList, name: 'Test Types' },
   { path: '/quesions/:question_id', component: Test, name: 'Test' },
-  { path: '/test_menu/:user_id', component: TestMenu, name: 'TestMenu' },
+  {
+    path: '/test_menu/:user_id/:tests_group_id',
+    component: TestMenu,
+    name: 'TestMenu'
+  },
   { path: '/tests', component: TestCollection, name: 'TestCollection' },
   {
-    path: '/regular_test/:user_id',
+    path: '/regular_test/:user_id/:group_id',
     component: RegularTest,
     name: 'RegularTest'
   },
   {
-    path: '/type_speed_test/:user_id',
+    path: '/type_speed_test/:user_id/:group_id',
     component: TypeSpeedTest,
     name: 'TypeSpeedTest'
   },
   {
-    path: '/regular_test/:user_id/new',
+    path: '/regular_test/:user_id/:group_id/new',
     component: NewRegularTest,
     name: 'NewRegularTest'
   },
   {
-    path: '/regular_test/single_select/:user_id',
+    path: '/regular_test/single_select/:user_id/:group_id',
     component: NewRegularSingleTest,
     name: 'NewRegularSingleTest'
   },
   {
-    path: '/regular_test/multi_select/:user_id',
+    path: '/regular_test/multi_select/:user_id/:group_id',
     component: NewRegularMultiTest,
     name: 'NewRegularMultiTest'
   },
   {
-    path: '/regular_test/true_false/:user_id',
+    path: '/regular_test/true_false/:user_id/:group_id',
     component: NewRegularTrueFalseTest,
     name: 'NewRegularTrueFalseTest'
   },
   {
-    path: '/regular_test/:user_id/new/menu',
+    path: '/regular_test/:user_id/:group_id/new/menu',
     component: NewRegularTestMenu,
     name: 'NewRegularTestMenu'
   },

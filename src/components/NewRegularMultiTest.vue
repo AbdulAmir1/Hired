@@ -1,8 +1,11 @@
 <script>
+import axios from 'axios'
+import { getTestsForUser } from '../services/api'
+import BASEURL from '../../config'
 export default {
   name: 'NewRegulaMultiTest',
   components: {},
-  props: ['msg', 'obj1', 'header'],
+  props: ['user_id'],
   // Or props: ["msg", "name", ...etc.] ,
   data: () => ({
     options_count: 0,
@@ -18,9 +21,12 @@ export default {
       this.options_count++
       this.new_test.options.push(this.cur_option)
     },
-    handleSubmit(e) {
+    async handleSubmit(e) {
       e.preventDefault()
       console.log('submiting ', this.new_test)
+      await axios.post(`${BASEURL}/tests`, this.new_test).then((response) => {
+        this.moveTo(`/test_menu/${this.user_id}/${this.newCol_id}`)
+      })
     },
     handleChange(e) {
       this.cur_option = e.target.value
@@ -35,7 +41,7 @@ export default {
     }
   },
   mounted: function () {
-    console.log('new multi choice test usr id: ', this.$route.params.user_id)
+    console.log('new multi choice test user id: ', this.$route.params.user_id)
   }
 }
 </script>

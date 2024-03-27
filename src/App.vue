@@ -1,5 +1,6 @@
 <script>
 import NavBar from './components/NavBar.vue'
+import Home from './components/Home.vue'
 export default {
   name: 'App',
   components: {
@@ -19,7 +20,7 @@ export default {
   <!-- <h2>App</h2> -->
   <NavBar />
   <main>
-    <router-view header="Listings In Miami" :obj1="this.objTest"></router-view>
+    <router-view user_id="66027a649471f3ab9ae58aec"></router-view>
   </main>
 </template>
 <style scoped></style>

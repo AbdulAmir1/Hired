@@ -4,7 +4,7 @@ import TestCollection from './TestCollection.vue'
 export default {
   name: 'Home',
   components: { TestCollection },
-  props: ['msg', 'obj1', 'header'],
+  props: ['user_id'],
   // Or props: ["msg", "name", ...etc.] ,
   data: () => ({ heading: '' }),
 
@@ -13,14 +13,16 @@ export default {
       this.$router.push(url)
     }
   },
-  mounted: function () {}
+  mounted: function () {
+    console.log('in Home, user id :', this.user_id)
+  }
 }
 </script>
 <template>
   <h2>Home</h2>
 
   <!-- <div @click="moveTo('/tests')">Test Collections</div> -->
-  <TestCollection usr_id="66027a649471f3ab9ae58aec" />
+  <TestCollection :user_id="this.user_id" />
   <!-- <div @click="moveTo('/test_menu')">Tests</div> -->
 </template>
 <style scoped></style>

@@ -2,7 +2,7 @@
 export default {
   name: 'RegularTest',
   components: {},
-  props: ['msg', 'obj1', 'header'],
+  props: ['user_id'],
   // Or props: ["msg", "name", ...etc.] ,
   data: () => ({ heading: '' }),
 
@@ -13,12 +13,21 @@ export default {
       this.$router.push(url)
     }
   },
-  mounted: function () {}
+  mounted: function () {
+    console.log('RegularTest user_id==>', this.$route.params.user_id)
+    console.log('RegularTest group_id==>', this.$route.params.group_id)
+  }
 }
 </script>
 <template>
   <h2>Regular Test</h2>
-  <div @click="moveTo(`/regular_test/${this.$route.params.user_id}/new`)">
+  <div
+    @click="
+      moveTo(
+        `/regular_test/${this.$route.params.user_id}/${this.$route.params.group_id}/new`
+      )
+    "
+  >
     New
   </div>
 </template>

@@ -5,7 +5,7 @@ import BASEURL from '../../config'
 export default {
   name: 'TestDetails',
   components: {},
-  props: ['msg', 'obj1', 'header'],
+  props: ['user_id'],
   // Or props: ["msg", "name", ...etc.] ,
   data: () => ({
     test: null,

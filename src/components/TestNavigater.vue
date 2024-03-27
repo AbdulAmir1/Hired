@@ -3,7 +3,7 @@ import TestsRunner from './TestsRunner.vue'
 export default {
   name: 'TestNavigater',
   components: { TestsRunner },
-  props: ['msg', 'obj1', 'header'],
+  props: ['user_id'],
   // Or props: ["msg", "name", ...etc.] ,
   data: () => ({ heading: '', testState: { a: 1, arr: [0], arr2: [0] } }),
 
