@@ -20,7 +20,6 @@ export default {
   <NavBar />
   <main>
     <router-view header="Listings In Miami" :obj1="this.objTest"></router-view>
-    // header is a prop example
   </main>
 </template>
 <style scoped></style>

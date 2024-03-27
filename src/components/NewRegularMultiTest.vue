@@ -51,6 +51,7 @@ export default {
       <button type="submit">submit</button>
     </form>
     <div>
+      <div>{{ title }}</div>
       <div v-for="(selection, index) of this.selections">
         <input
           type="checkbox"

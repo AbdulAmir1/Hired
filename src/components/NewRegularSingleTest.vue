@@ -50,6 +50,7 @@ export default {
       <button type="submit">submit</button>
     </form>
     <div>
+      <div>{{ title }}</div>
       <div v-for="selection of this.selections">
         <input type="radio" name="singleSelTest" value="selection.option" />
         {{ selection.option }}
