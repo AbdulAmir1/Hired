@@ -1,5 +1,5 @@
 <script>
-import addNewTestType from '../services/api'
+import { addNewTestType } from '../services/api'
 export default {
   name: 'TestTypeList',
   components: {},
