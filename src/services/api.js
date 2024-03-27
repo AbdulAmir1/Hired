@@ -12,4 +12,16 @@ const addNewTestType = async (testType) => {
     })
 }
 
-export default addNewTestType
+const getTestsForUser = async (user_id) => {
+  await axios
+    .get(`${BASEURL}/tests_groups/users/${user_id}`)
+    .then(function (response) {
+      console.log('new type created.')
+      console.log(response)
+    })
+    .catch(function (error) {
+      console.log(error)
+    })
+}
+
+export { addNewTestType, getTestsForUser }
