@@ -17,10 +17,6 @@ export default {
     add() {
       this.options_count++
       this.new_test.options.push(this.cur_option)
-      // console.log('added. ==>', this.selections)
-      // for (let i = 0; i < this.selections.length; i++) {
-      //   console.log(this.selections[i].option)
-      // }
     },
 
     moveTo(url) {

@@ -18,7 +18,8 @@ import TestCollectionDetails from './components/TestCollectionDetails.vue'
 import TestDetails from './components/TestDetails.vue'
 
 const routes = [
-  { path: '/', component: Home, name: 'Home' },
+  // { path: '/', component: Root, name: 'Root' },
+  { path: '/Home', component: Home, name: 'Home' },
   { path: '/about', component: About, name: 'About' },
   { path: '/tests/types', component: TestTypeList, name: 'Test Types' },
   { path: '/quesions/:question_id', component: Test, name: 'Test' },
