@@ -12,13 +12,15 @@ import NewRegularTestMenu from './components/NewRegularTestMenu.vue'
 import NewRegularSingleTest from './components/NewRegularSingleTest.vue'
 import NewRegularMultiTest from './components/NewRegularMultiTest.vue'
 import NewRegularTrueFalseTest from './components/NewRegularTrueFalseTest.vue'
-import TestNavigater from './components/TestNavigater.vue'
 import TestCollection from './components/TestCollection.vue'
 import TestCollectionDetails from './components/TestCollectionDetails.vue'
 import TestDetails from './components/TestDetails.vue'
+import NextTest from './components/NextTest.vue'
+import SignIn from './components/SignIn.vue'
+import SignUp from './components/SignUp.vue'
 
 const routes = [
-  // { path: '/', component: Root, name: 'Root' },
+  { path: '/', component: SignIn, name: 'Root' },
   { path: '/Home', component: Home, name: 'Home' },
   { path: '/about', component: About, name: 'About' },
   { path: '/tests/types', component: TestTypeList, name: 'Test Types' },
@@ -64,13 +66,9 @@ const routes = [
     component: NewRegularTestMenu,
     name: 'NewRegularTestMenu'
   },
+
   {
-    path: '/hiring_test/:test_id/start',
-    component: TestNavigater,
-    name: 'TestNavigater'
-  },
-  {
-    path: '/tests/:test_col_id',
+    path: '/tests/:user_id/:test_col_id/',
     component: TestCollectionDetails,
     name: 'TestCollectionDetails'
   },
@@ -78,6 +76,21 @@ const routes = [
     path: '/test_details/:test_id',
     component: TestDetails,
     name: 'TestDetails'
+  },
+  {
+    path: '/hiring_test/test/start',
+    component: NextTest,
+    name: 'NextTest'
+  },
+  {
+    path: '/user/signin',
+    component: SignIn,
+    name: 'SignIn'
+  },
+  {
+    path: '/user/signup',
+    component: SignUp,
+    name: 'SignUp'
   }
 ]
 

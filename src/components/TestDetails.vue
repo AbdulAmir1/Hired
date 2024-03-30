@@ -35,7 +35,8 @@ export default {
 }
 </script>
 <template>
-  <h2>Test</h2>
+  <h2>Test Details</h2>
+  <h3>TestDetails.vue</h3>
   <div v-if="this.test">
     <div>Question : {{ test.title }}</div>
     <div v-for="(option, index) of test.options">

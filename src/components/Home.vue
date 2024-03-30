@@ -20,7 +20,7 @@ export default {
 </script>
 <template>
   <h2>Home</h2>
-
+  <h3>Home.vue</h3>
   <!-- <div @click="moveTo('/tests')">Test Collections</div> -->
   <TestCollection :user_id="this.user_id" />
   <!-- <div @click="moveTo('/test_menu')">Tests</div> -->

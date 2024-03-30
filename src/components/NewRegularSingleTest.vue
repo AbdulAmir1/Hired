@@ -28,8 +28,21 @@ export default {
       e.preventDefault()
       console.log('submiting ', this.new_test)
       await axios.post(`${BASEURL}/tests`, this.new_test).then((response) => {
-        this.moveTo(`/test_menu/${this.user_id}/${this.newCol_id}`)
+        this.new_test_id = response.data._id
+        console.log('response is ---> ', response)
       })
+
+      await axios
+        .put(
+          `${BASEURL}/tests_groups/${this.$route.params.group_id}/tests/${this.new_test_id}`
+        )
+        .then((response) => {
+          // this.new_test_id = response.data._id
+          console.log('add test ,response is ---> ', response)
+          this.moveTo(
+            `/test_menu/${this.$route.params.user_id}/${this.$route.params.group_id}`
+          )
+        })
     },
     handleChange(e) {
       this.cur_option = e.target.value
@@ -46,6 +59,7 @@ export default {
 <template>
   <h2>New Single Select Tes 1</h2>
   <!-- <div @click="moveTo('/regular_test/new')">New</div> -->
+  <h4>NewRegularSingleTest.vue</h4>
   <div>
     <form @submit="handleSubmit">
       <label for="question">Quesion</label>

@@ -15,5 +15,6 @@ export default {
 </script>
 <template>
   <h2>TestTaken</h2>
+  <h3>TestTaken.vue</h3>
 </template>
 <style scoped></style>

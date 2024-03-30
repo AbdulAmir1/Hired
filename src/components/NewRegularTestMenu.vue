@@ -22,11 +22,15 @@ export default {
 <template>
   <div>
     <h2>New Regular Test Menu</h2>
+    <h3>NewRegularTestMenu.vue</h3>
     <!-- <div @click="moveTo('/regular_test/new')">New</div> -->
     <div
       @click="
         moveTo(
-          '/regular_test/single_select/' + this.user_id + '/' + this.group_id
+          '/regular_test/single_select/' +
+            this.$route.params.user_id +
+            '/' +
+            this.group_id
         )
       "
     >
@@ -35,7 +39,7 @@ export default {
     <div
       @click="
         moveTo(
-          '/regular_test/multi_select/' + this.usr_id + '/' + this.group_id
+          '/regular_test/multi_select/' + this.user_id + '/' + this.group_id
         )
       "
     >
@@ -43,7 +47,7 @@ export default {
     </div>
     <div
       @click="
-        moveTo('/regular_test/true_false/' + this.usr_id + '/' + this.group_id)
+        moveTo('/regular_test/true_false/' + this.user_id + '/' + this.group_id)
       "
     >
       True or False

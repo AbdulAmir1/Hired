@@ -19,5 +19,6 @@ export default {
 </script>
 <template>
   <h2>TypeSpeedTest</h2>
+  <h3>TypeSpeedTest.vue</h3>
 </template>
 <style scoped></style>

@@ -23,6 +23,10 @@ export default {
       await axios
         .delete(`${BASEURL}/tests/${id}`)
         .then((response) => console.log('deleted: : ', response.data))
+    },
+    test() {
+      console.log('Test..')
+      // moveTo(`/test_details/${test._id}`)
     }
   },
   async mounted() {
@@ -33,18 +37,29 @@ export default {
 </script>
 <template>
   <h2>Test collection Details</h2>
+  <h3>TestCollectionDetails.vue</h3>
   <div v-if="this.testsCollectionDetails">
     test collection title : {{ testsCollectionDetails.title }}
+    <button
+      @click="
+        this.moveTo(
+          `/regular_test/${this.$route.params.user_id}/${testsCollectionDetails._id}`
+        )
+      "
+    >
+      Add Tests
+    </button>
     <div v-if="this.testsCollectionDetails.tests">
       <!-- <span>Tests Exists</span> -->
       <!-- tests count : {{ this.testsCollectionDetails.tests.length }} -->
       <div v-for="test in this.testsCollectionDetails.tests">
-        <div class="cyan" @click="moveTo(`/test_details/${test._id}`)">
+        <div class="cyan" @click="test()">
           <div class="pink">Question -- : {{ test.title }}</div>
           &nbsp;&nbsp;<span @click="deleteQuestion(e, test._id)">X</span>
         </div>
       </div>
     </div>
+
     <!-- <div v-for="collection in this.testsCollections.data">
       title :
       <span @click="viewTestCollection(collection._id)">{{

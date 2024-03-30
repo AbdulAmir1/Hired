@@ -1,9 +1,11 @@
 <script>
+import NextTest from './NextTest.vue'
+
 // import NewRegularTestMenu from './NewRegularTestMenu.vue'
 export default {
   name: 'TestRunner',
   emits: ['handleTestState'],
-  components: {},
+  components: { NextTest },
   props: ['user_id'],
   // Or props: ["msg", "name", ...etc.] ,
   data: () => ({
@@ -28,8 +30,8 @@ export default {
 </script>
 <template>
   <h2>Test Runner</h2>
-  <!-- <div @click="moveTo('/regular_test/new')">New</div> -->
-  <!-- <NewRegularTestMenu /> -->
+  <h3>TestsRunner.vue</h3>
+  <NextTest />
   <button @click="handleStateChange">Test</button>
 </template>
 <style scoped></style>

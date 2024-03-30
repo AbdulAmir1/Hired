@@ -5,11 +5,9 @@ export default {
   components: { NewRegularTestMenu },
   props: ['user_id'],
   // Or props: ["msg", "name", ...etc.] ,
-  data: () => ({ heading: '' }),
+  data: () => ({ title: '' }),
 
   methods: {
-    showWallets() {},
-    hideWallets() {},
     moveTo(url) {
       this.$router.push(url)
     }
@@ -19,8 +17,7 @@ export default {
 </script>
 <template>
   <div>
-    <h2>New Regular Test</h2>
-    <!-- <div @click="moveTo('/regular_test/new')">New</div> -->
+    <h3>NewRegularTest.vue</h3>
     <NewRegularTestMenu
       :user_id="this.$route.params.user_id"
       :group_id="this.$route.params.group_id"

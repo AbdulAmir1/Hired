@@ -11,6 +11,7 @@ export default {
 }
 </script>
 <template>
-  <h2>App</h2>
+  <h2>Test</h2>
+  <h3>Test.vue</h3>
 </template>
 <style scoped></style>

@@ -21,6 +21,7 @@ export default {
 </script>
 <template>
   <h2>Regular Test</h2>
+  <h3>RegularTest.vue</h3>
   <div
     @click="
       moveTo(

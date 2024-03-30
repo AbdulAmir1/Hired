@@ -1,7 +1,4 @@
 <script>
-import axios from 'axios'
-import { getTestsForUser } from '../services/api'
-import BASEURL from '../../config'
 export default {
   name: 'NewRegulaMultiTest',
   components: {},
@@ -25,8 +22,21 @@ export default {
       e.preventDefault()
       console.log('submiting ', this.new_test)
       await axios.post(`${BASEURL}/tests`, this.new_test).then((response) => {
-        this.moveTo(`/test_menu/${this.user_id}/${this.newCol_id}`)
+        this.new_test_id = response.data._id
+        console.log('response is ---> ', response)
       })
+
+      await axios
+        .put(
+          `${BASEURL}/tests_groups/${this.$route.params.group_id}/tests/${this.new_test_id}`
+        )
+        .then((response) => {
+          // this.new_test_id = response.data._id
+          console.log('add test ,response is ---> ', response)
+          this.moveTo(
+            `/test_menu/${this.$route.params.user_id}/${this.$route.params.group_id}`
+          )
+        })
     },
     handleChange(e) {
       this.cur_option = e.target.value
@@ -48,6 +58,7 @@ export default {
 <template>
   <h2>New Multi Select Test</h2>
   <!-- <div @click="moveTo('/regular_test/new')">New</div> -->
+  <h3>NewRegularMultiTest.vue</h3>
   <div>
     <form @submit="handleSubmit">
       <div>

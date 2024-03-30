@@ -16,6 +16,7 @@ export default {
 }
 </script>
 <template>
+  <h3>TestTypeList.vue</h3>
   <button @click="addNew">Add Type</button>
 </template>
 <style scoped></style>

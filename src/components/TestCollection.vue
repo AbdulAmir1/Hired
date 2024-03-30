@@ -14,13 +14,13 @@ export default {
       console.log('moving..to', url)
       this.$router.push(url)
     },
-    async getTestCollections(user_id) {
+    async getTestCollections(col_id) {
       await axios
         .get(`${BASEURL}/tests_groups/users/${this.user_id}`)
         .then((response) => (this.testsCollections = response.data))
     },
     async viewTestCollection(e, id) {
-      this.moveTo(`tests/${id}`)
+      this.moveTo(`/tests/${this.user_id}/${id}`)
     },
     async deleteCol(e, id) {
       await axios
@@ -47,6 +47,7 @@ export default {
     }
   },
   async mounted() {
+    console.log('Loading.,,')
     console.log('current user :', this.user_id)
     await this.getTestCollections(this.user_id)
     console.log('tests => ', this.testsCollections)
@@ -55,12 +56,17 @@ export default {
 </script>
 <template>
   <h2>Test collection</h2>
-  <div v-if="this.testsCollections">
+  <h3>TestCollection.vue</h3>
+  <div v-if="this.testsCollections" class="flex1">
     <div v-for="collection in this.testsCollections">
       <div class="cyan" @click="(e) => viewTestCollection(e, collection._id)">
         title :
         <span>{{ collection.title }}</span
-        >&nbsp;&nbsp;<span @click="(e) => deleteCol(e, collection._id)">X</span>
+        >&nbsp;&nbsp;<span
+          class="red"
+          @click="(e) => deleteCol(e, collection._id)"
+          >X</span
+        >
       </div>
     </div>
   </div>
@@ -73,7 +79,28 @@ export default {
   border: 1px solid black;
 }
 .blue {
+  width: 100px;
+  margin: 20px auto;
   background-color: blue;
   color: white;
+}
+
+.red {
+  color: red;
+}
+
+.flex1 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  gap: 5px;
+}
+
+.flex1 div {
+  width: 200px;
+  height: 200px;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px auto;
 }
 </style>

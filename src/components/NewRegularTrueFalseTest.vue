@@ -10,7 +10,8 @@ export default {
   data: () => ({
     options_count: 0,
     cur_option: 1,
-    new_test: { title: '', type: 3, options: [], answers: [] }
+    new_test: { title: '', type: 3, options: [], answers: [] },
+    new_test_id: ''
   }),
 
   methods: {
@@ -29,8 +30,21 @@ export default {
       e.preventDefault()
       console.log('submiting ', this.new_test)
       await axios.post(`${BASEURL}/tests`, this.new_test).then((response) => {
-        this.moveTo(`/test_menu/${this.user_id}/${this.newCol_id}`)
+        this.new_test_id = response.data._id
+        console.log('response is ---> ', response)
       })
+
+      await axios
+        .put(
+          `${BASEURL}/tests_groups/${this.$route.params.group_id}/tests/${this.new_test_id}`
+        )
+        .then((response) => {
+          // this.new_test_id = response.data._id
+          console.log('add test ,response is ---> ', response)
+          this.moveTo(
+            `/test_menu/${this.$route.params.user_id}/${this.$route.params.group_id}`
+          )
+        })
     },
     handleChange(e, i) {
       // console.log('e is ', e)
@@ -53,6 +67,7 @@ export default {
 </script>
 <template>
   <h2>New True False Test</h2>
+  <h3>NewRegularTrueFalseTest.vue</h3>
   <!-- <div @click="moveTo('/regular_test/new')">New</div> -->
   <form @submit="handleSubmit">
     <label for="question">Quesion</label>
