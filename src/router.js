@@ -21,7 +21,7 @@ import SignUp from './components/SignUp.vue'
 
 const routes = [
   { path: '/', component: SignIn, name: 'Root' },
-  { path: '/Home', component: Home, name: 'Home' },
+  { path: '/home/:user_id', component: Home, props: true, name: 'Home' },
   { path: '/about', component: About, name: 'About' },
   { path: '/tests/types', component: TestTypeList, name: 'Test Types' },
   { path: '/quesions/:question_id', component: Test, name: 'Test' },

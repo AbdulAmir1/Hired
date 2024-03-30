@@ -6,19 +6,24 @@ import BASEURL from '../../config'
 export default {
   name: 'SignUp',
   components: {},
-  props: ['user_id'],
+  props: [],
   // Or props: ["msg", "name", ...etc.] ,
   data: () => ({
-    user: { email: '', password: '', confirmed_password: '' },
+    user: { name: '', email: '', password: '', confirmed_password: '' },
     showErr: false,
-    errorMessage: ''
+    errorMessage: '',
+    user_id: ''
   }),
 
   methods: {
     isValidCredentials() {
-      if (this.user.email === '') {
-        this.errorMessage = 'Email is missing'
-        console.log('email blank --> ', this.errorMessage)
+      if (this.user.name === '') {
+        this.errorMessage = 'Name is missing'
+        console.log(this.user, ' name is blank --> ', this.errorMessage)
+      } else if (this.user.email === '') {
+        this.errorMessage = 'Email is required'
+        console.log('email is blank ', this.user.errorMessage)
+        // this.user.errorMessage = 'Email is missing'
       } else if (this.user.password === '') {
         this.errorMessage = 'Password is required'
         console.log('pass blank ', this.user.errorMessage)
@@ -48,13 +53,14 @@ export default {
       if (this.isValidCredentials()) {
         await axios
           .post(`${BASEURL}/users/signup`, {
+            name: this.user.name,
             email: this.user.email,
             password: this.user.password,
             is_creater: false
           })
           .then((response) => {
             if (response.data !== '') {
-              user_id = response.data._id
+              this.user_id = response.data._id
             } else {
               // this.goRegister = true
               this.errorMessage = 'error'
@@ -65,7 +71,7 @@ export default {
           })
       } else {
         // this.errorMessage = 'error'
-        console.log('error =>', this.errorMessage)
+        console.log('error =>', this.errorMessage, 'state---> ', this.user)
         this.showErr = true
       }
       // console.log('user data creds. :', this.user)
@@ -83,13 +89,29 @@ export default {
     <h3>SignUp.vue</h3>
     <div class="signUp">
       <form @submit="(e) => handleSubmit(e)">
-        <div><span>Email</span><input type="email" name="email" /></div>
         <div>
-          <span>Password</span><input type="password" name="password" />
+          <span>Your Name</span
+          ><input type="text" name="name" @input="(e) => handleChange(e)" />
+        </div>
+        <div>
+          <span>Email</span
+          ><input type="email" name="email" @input="(e) => handleChange(e)" />
+        </div>
+        <div>
+          <span>Password</span
+          ><input
+            type="password"
+            name="password"
+            @input="(e) => handleChange(e)"
+          />
         </div>
         <div>
           <span>Confirm Password</span
-          ><input type="password" name="confirmed_password" />
+          ><input
+            type="password"
+            name="confirmed_password"
+            @input="(e) => handleChange(e)"
+          />
         </div>
         <div class="error" v-if="showErr">{{ errorMessage }}</div>
         <button type="submit">Sign In</button>

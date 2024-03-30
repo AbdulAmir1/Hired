@@ -30,6 +30,10 @@ export default {
     }
   },
   async mounted() {
+    console.log(
+      'in TestCollectionDeatails id is :',
+      this.$route.params.test_col_id
+    )
     await this.getTestCollectionsDetails(this.$route.params.test_col_id)
     console.log('tests => ', this.testsCollectionDetails)
   }

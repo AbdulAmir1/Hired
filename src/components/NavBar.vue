@@ -2,7 +2,7 @@
 export default {
   name: 'NavBar',
   components: {},
-  props: [],
+  props: ['user'],
   // Or props: ["msg", "name", ...etc.] ,
   data: () => ({ heading: '' }),
 
@@ -12,7 +12,7 @@ export default {
 </script>
 <template>
   <!-- <h2>NavBar</h2> -->
-  <router-link to="/home">Home</router-link>
+  <!-- <router-link to="/home">Home</router-link> -->
   &nbsp; <router-link to="/about">About</router-link> &nbsp;
   <router-link to="/tests/types">Test Types</router-link>&nbsp;
   <router-link to="/hiring_test/test/start">Start</router-link>&nbsp;

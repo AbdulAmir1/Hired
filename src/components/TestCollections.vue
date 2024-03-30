@@ -3,9 +3,9 @@ import axios from 'axios'
 import { getTestsForUser } from '../services/api'
 import BASEURL from '../../config'
 export default {
-  name: 'TestCollection',
+  name: 'TestCollections',
   components: {},
-  props: ['user', 'test'],
+  props: ['user', 'is_creater'],
   // Or props: ["msg", "name", ...etc.] ,
   data: () => ({ testsCollections: null, newCol_id: '' }),
 
@@ -51,12 +51,8 @@ export default {
   },
   async mounted() {
     // console.log('Loading...')
-    console.log(
-      'In TestCollection , current user :',
-      this.user,
-      ' test is ',
-      this.test
-    )
+    console.log('user is creater =>', this.is_creater)
+    console.log('user is  =>', this.user)
     // await this.getTestCollections(this.user_id)
     // console.log('tests => ', this.testsCollections)
   }

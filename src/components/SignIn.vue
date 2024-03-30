@@ -24,7 +24,8 @@ export default {
         })
         .then((response) => {
           if (response.data !== '') {
-            user_id = response.data._id
+            this.user_id = response.data._id
+            this.moveTo(`Home`, this.user_id)
           } else {
             this.goRegister = true
           }
@@ -37,8 +38,8 @@ export default {
       // console.log(e.target.name)
       this.user[e.target.name] = e.target.value
     },
-    moveTo(url) {
-      this.$router.push(url)
+    moveTo(url, param) {
+      this.$router.push({ name: url, params: { user_id: param } })
     }
   },
   mounted: function () {}

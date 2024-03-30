@@ -18,9 +18,9 @@ export default {
 </script>
 <template>
   <!-- <h2>App</h2> -->
-  <NavBar />
+
   <main>
-    <router-view user_id="66027a649471f3ab9ae58aec"></router-view>
+    <router-view></router-view>
   </main>
 </template>
 <style scoped></style>
