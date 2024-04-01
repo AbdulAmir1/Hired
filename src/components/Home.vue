@@ -23,12 +23,12 @@ export default {
     moveTo(url) {
       this.$router.push(url)
     },
-    async getAllTestCollections() {
-      await axios
-        .get(`${BASEURL}/tests_groups/users/66027a649471f3ab9ae58aec`)
-        .then((response) => (this.allTestCols = response.data))
-        .then((response) => console.log('response is ', response))
-    },
+    // async getAllTestCollections() {
+    //   await axios
+    //     .get(`${BASEURL}/tests_groups/users/66027a649471f3ab9ae58aec`)
+    //     .then((response) => (this.allTestCols = response.data))
+    //     .then((response) => console.log('response is ', response))
+    // },
     async getUserDetails() {
       await axios
         .get(`${BASEURL}/users/66027a649471f3ab9ae58aec`)
@@ -48,15 +48,15 @@ export default {
     this.test2 = 'hello'
     console.log('in Home, user id :', this.user_id)
     await this.getUserDetails()
-    await this.getAllTestCollections()
+    // await this.getAllTestCollections()
   }
 }
 </script>
 <template>
   <div>
     <NavBar :user="this.user_id" />
-    <h2>Home</h2>
-    <h3>Home.vue</h3>
+    <!-- <h2>Home</h2>
+    <h3>Home.vue</h3> -->
     <!-- <div @click="moveTo('/tests')">Test Collections</div> -->
     <div v-if="this.allTestCols" class="flex1">
       <!-- <div>tests</div> -->
@@ -68,7 +68,7 @@ export default {
       <TestCollections
         :user="this.user_id"
         :test="121"
-        is_creater="iscreater"
+        :is_creater="this.is_creater"
       />
     </div>
   </div>

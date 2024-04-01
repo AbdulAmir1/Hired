@@ -11,6 +11,17 @@ export default {
 }
 </script>
 <template>
-  <h2>About</h2>
+  <div>
+    <h2>About</h2>
+    <div>
+      The website serves as a pre-employment screening tool to view a
+      candidate's qualifications, and skills in a results-driven format.
+    </div>
+  </div>
 </template>
-<style scoped></style>
+<style scoped>
+div {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+</style>

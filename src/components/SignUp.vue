@@ -85,8 +85,6 @@ export default {
 </script>
 <template>
   <div>
-    <h2>Sign Up</h2>
-    <h3>SignUp.vue</h3>
     <div class="signUp">
       <form @submit="(e) => handleSubmit(e)">
         <div>
@@ -114,7 +112,7 @@ export default {
           />
         </div>
         <div class="error" v-if="showErr">{{ errorMessage }}</div>
-        <button type="submit">Sign In</button>
+        <div><button type="submit">Sign Up</button></div>
       </form>
     </div>
   </div>
@@ -126,4 +124,26 @@ export default {
   border: 1px solid blue;
   color: red;
 }
+
+div.signUp {
+  background-color: rgb(205, 205, 198);
+  width: 30%;
+  height: 100px;
+  padding: 7px;
+  margin: 100px auto;
+  border: 1px solid #000;
+}
+
+div.signUp > div {
+  /* margin: 20px 5px; */
+  clear: both;
+}
+
+/* div.signUp div input[type='email'],
+input[type='password'],
+input[type='text'] {
+  background-color: aquamarine;
+  float: right;
+  margin-right: 5px; 
+}*/
 </style>
